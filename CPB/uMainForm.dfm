@@ -2,8 +2,8 @@ object MainForm: TMainForm
   Left = 0
   Top = 0
   Caption = 'MainForm'
-  ClientHeight = 779
-  ClientWidth = 1024
+  ClientHeight = 455
+  ClientWidth = 647
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,17 +15,17 @@ object MainForm: TMainForm
   object dxLayoutControl1: TdxLayoutControl
     Left = 0
     Top = 0
-    Width = 1024
-    Height = 779
+    Width = 647
+    Height = 455
     Align = alClient
     TabOrder = 0
     AutoSize = True
-    ExplicitWidth = 1014
-    ExplicitHeight = 747
+    ExplicitWidth = 614
+    ExplicitHeight = 409
     object btnDesign: TcxButton
-      Left = 12
-      Top = 12
-      Width = 196
+      Left = 8
+      Top = 8
+      Width = 124
       Height = 25
       Caption = 'Design Dashboard'
       SpeedButtonOptions.CanBeFocused = False
@@ -33,10 +33,10 @@ object MainForm: TMainForm
       OnClick = btnDesignClick
     end
     object dxDashboardControl1: TdxDashboardControl
-      Left = 12
-      Top = 46
-      Width = 1000
-      Height = 721
+      Left = 8
+      Top = 38
+      Width = 631
+      Height = 409
       DashboardName = 'Dashboard'
       Layout.Strings = (
         '<?xml version="1.0" encoding="utf-8"?>'
@@ -200,21 +200,21 @@ object MainForm: TMainForm
         '{"Parameters":{"CountryDashboardParameter":"France"}}')
       TabOrder = 3
       DesignSize = (
-        1000
-        721)
+        631
+        409)
     end
     object btnView: TcxButton
-      Left = 215
-      Top = 12
-      Width = 196
+      Left = 137
+      Top = 8
+      Width = 124
       Height = 25
       Caption = 'View Dashboard'
       TabOrder = 1
       OnClick = btnViewClick
     end
     object cbCountries: TcxLookupComboBox
-      Left = 500
-      Top = 12
+      Left = 346
+      Top = 8
       Properties.KeyFieldNames = 'Country'
       Properties.ListColumns = <
         item
@@ -225,7 +225,7 @@ object MainForm: TMainForm
       Style.HotTrack = False
       Style.TransparentBorder = False
       TabOrder = 2
-      Width = 512
+      Width = 293
     end
     object dxLayoutControl1Group_Root: TdxLayoutGroup
       AlignHorz = ahClient
@@ -279,7 +279,7 @@ object MainForm: TMainForm
       AlignHorz = ahClient
       CaptionOptions.Text = 'Select Country'
       Control = cbCountries
-      ControlOptions.OriginalHeight = 27
+      ControlOptions.OriginalHeight = 23
       ControlOptions.OriginalWidth = 145
       ControlOptions.ShowBorder = False
       Index = 2
@@ -295,10 +295,10 @@ object MainForm: TMainForm
   object dsNWind: TDataSource
     DataSet = FDNWind
     Left = 208
-    Top = 480
+    Top = 413
   end
   object dxSkinController1: TdxSkinController
-    SkinName = 'WXI'
+    SkinName = 'WXICompact'
     Left = 96
     Top = 408
   end
@@ -307,13 +307,13 @@ object MainForm: TMainForm
       'Database=..\..\..\nwind.db'
       'DriverID=SQLite')
     Left = 152
-    Top = 480
+    Top = 413
   end
   object FDNWind: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT DISTINCT [Country] FROM [Customers] ORDER BY [Country];')
     Left = 96
-    Top = 480
+    Top = 413
   end
 end
