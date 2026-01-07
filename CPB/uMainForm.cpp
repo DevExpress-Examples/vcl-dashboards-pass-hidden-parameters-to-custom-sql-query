@@ -69,7 +69,7 @@ void __fastcall TMainForm::cbCountriesPropertiesEditValueChanged(TObject *Sender
 		->Parameters->ParamByName[L"CountryDashboardParameter"]
 		->Value = cbCountries->EditValue;
 
-	dxDashboardControl1->Dashboard->ApplyParametersToState();
+	dxDashboardControl1->ApplyParametersToState();
 }
 //---------------------------------------------------------------------------
 
