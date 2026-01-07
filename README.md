@@ -5,21 +5,19 @@
 
 # DevExpress VCL Dashboards — Pass a Hidden Dashboard Parameter to an SQL Query
 
-This example passes a hidden [dashboard parameter](https://docs.devexpress.com/Dashboard/117062/web-dashboard/create-dashboards-on-the-web/data-analysis/dashboard-parameters) to an SQL query. This sample solution relies on the [TdxCustomDashboardControl.Parameters](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.Parameters) property to access and modify the target dashboard parameter.
+This example passes a hidden [dashboard parameter](https://docs.devexpress.com/Dashboard/117062/web-dashboard/create-dashboards-on-the-web/data-analysis/dashboard-parameters) to an SQL query. This sample solution uses the [TdxCustomDashboardControl.Parameters](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.Parameters) property to access and modify the target dashboard parameter.
 
 ## Prerequisites
 
-* Microsoft Window 10 or newer
+* Microsoft Windows 10 or newer
 * Embarcadero RAD Studio IDE 10.4 (Sydney) or newer (Community Edition is not supported)
 * DevExpress VCL Components v25.2.3 or newer
 
-## Sample Scenario Overview
-
-To pass a hidden dashboard parameter to an SQL query, you must:
+## Implementation Details
 
 ### Create a Dashboard Parameter
 
-Open the [dashboard designer](https://docs.devexpress.com/Dashboard/116518/basic-concepts-and-terminology/dashboard-designer#web-dashboard---designer-mode) (select the **Designer...** item in the [TdxDashboardControl](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxDashboardControl) component's context menu at design time or call [ShowDesigner](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.ShowDesigner) in code).
+Open the [dashboard designer](https://docs.devexpress.com/Dashboard/116518/basic-concepts-and-terminology/dashboard-designer#web-dashboard---designer-mode) (select the **Designer...** item in the [TdxDashboardControl](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxDashboardControl) component's context menu at design time or call the [ShowDesigner](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.ShowDesigner) method in code).
 
 ![DevExpress VCL Dashboards - Open the Designer Dialog](/Images/vcl-dashboard-open-designer.png)
 
