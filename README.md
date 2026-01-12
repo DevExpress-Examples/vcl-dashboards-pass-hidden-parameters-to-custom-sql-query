@@ -7,7 +7,7 @@
 
 # DevExpress VCL Dashboards — Pass a Hidden Dashboard Parameter to a SQL Query
 
-This example passes a hidden [dashboard parameter](https://docs.devexpress.com/Dashboard/117062/web-dashboard/create-dashboards-on-the-web/data-analysis/dashboard-parameters) to a SQL query. This sample solution uses the [TdxCustomDashboardControl.Parameters](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.Parameters) property to access and modify the target dashboard parameter.
+This example demonstrates a dashboards that displays sales data for a selected country. The selected country is passed to the underlying SQL query as a hidden [dashboard parameter](https://docs.devexpress.com/Dashboard/117062/web-dashboard/create-dashboards-on-the-web/data-analysis/dashboard-parameters). This sample solution uses the [TdxCustomDashboardControl.Parameters](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.Parameters) property to access and modify the target dashboard parameter.
 
 ## Prerequisites
 
