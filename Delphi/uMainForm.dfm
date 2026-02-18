@@ -40,7 +40,7 @@ object MainForm: TMainForm
       DashboardName = 'Dashboard'
       Layout.Strings = (
         '<?xml version="1.0" encoding="utf-8"?>'
-        '<Dashboard>'
+        '<Dashboard RequestParameters="false">'
         '  <Title Text="Dashboard" />'
         '  <DataSources>'
         
@@ -49,22 +49,27 @@ object MainForm: TMainForm
         
           '      <Connection Name="NWindConnectionString" FromAppConfig="tr' +
           'ue" />'
-        '      <Query Type="CustomSqlQuery" Name="CustomSqlQuery">'
+        '      <Query Type="SelectQuery" Name="Invoices">'
         
-          '        <Parameter Name="CountryParameter" Type="DevExpress.Data' +
-          'Access.Expression">(System.String)(?CountryDashboardParameter)</' +
-          'Parameter>'
-        '        <Sql>select * from [Invoices] '
-        'where ([Invoices].[Country] = @CountryParameter)</Sql>'
+          '        <Parameter Name="CountryFilter" Type="DevExpress.DataAcc' +
+          'ess.Expression">(System.String)(?CountryDashboardParameter )</Pa' +
+          'rameter>'
+        '        <Tables>'
+        '          <Table Name="Invoices" />'
+        '        </Tables>'
+        '        <Columns>'
+        '          <AllColumns Table="Invoices" />'
+        '        </Columns>'
+        '        <Filter>[Invoices.Country] = ?CountryFilter</Filter>'
         '      </Query>'
         '      <ConnectionOptions CloseConnection="true" />'
         '      <CalculatedFields>'
         
-          '        <CalculatedField Name="Date" Expression="[OrderDate] " D' +
-          'ataType="DateTime" DataMember="CustomSqlQuery" />'
+          '        <CalculatedField Name="Price" Expression="ToDouble( [Ext' +
+          'endedPrice] ) " DataType="Auto" DataMember="Invoices" />'
         
-          '        <CalculatedField Name="Price" Expression="[ExtendedPrice' +
-          ']" DataType="Double" DataMember="CustomSqlQuery" />'
+          '        <CalculatedField Name="Calculated Field 1" Expression="T' +
+          'oDouble( [Invoices.ExtendedPrice] ) " DataType="Auto" />'
         '      </CalculatedFields>'
         '    </SqlDataSource>'
         '  </DataSources>'
@@ -76,12 +81,12 @@ object MainForm: TMainForm
         '  <Items>'
         
           '    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" Sh' +
-          'owCaption="false" DataSource="sqlDataSource1" DataMember="Custom' +
-          'SqlQuery">'
+          'owCaption="false" DataSource="sqlDataSource1" DataMember="Invoic' +
+          'es">'
         '      <DataItems>'
         
-          '        <Dimension DataMember="Date" DateTimeGroupInterval="Mont' +
-          'hYear" DefaultId="DataItem1" />'
+          '        <Dimension DataMember="OrderDate" DateTimeGroupInterval=' +
+          '"MonthYear" DefaultId="DataItem1" />'
         '        <Measure DataMember="Price" DefaultId="DataItem0">'
         '          <NumericFormat FormatType="Currency" />'
         '        </Measure>'
@@ -102,8 +107,8 @@ object MainForm: TMainForm
         '    </Chart>'
         
           '    <Card ComponentName="cardDashboardItem1" Name="Card 1" ShowC' +
-          'aption="false" DataSource="sqlDataSource1" DataMember="CustomSql' +
-          'Query">'
+          'aption="false" DataSource="sqlDataSource1" DataMember="Invoices"' +
+          '>'
         '      <DataItems>'
         
           '        <Measure DataMember="ExtendedPrice" DefaultId="DataItem0' +
@@ -143,8 +148,8 @@ object MainForm: TMainForm
         '    </Card>'
         
           '    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" ShowC' +
-          'aption="false" DataSource="sqlDataSource1" DataMember="CustomSql' +
-          'Query">'
+          'aption="false" DataSource="sqlDataSource1" DataMember="Invoices"' +
+          '>'
         '      <DataItems>'
         '        <Dimension DataMember="Address" DefaultId="DataItem0" />'
         '        <Dimension DataMember="City" DefaultId="DataItem1" />'
@@ -298,6 +303,7 @@ object MainForm: TMainForm
     Top = 480
   end
   object dxSkinController1: TdxSkinController
+    NativeStyle = False
     SkinName = 'WXI'
     Left = 96
     Top = 408
