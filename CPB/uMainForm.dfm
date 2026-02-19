@@ -2,8 +2,8 @@ object MainForm: TMainForm
   Left = 0
   Top = 0
   Caption = 'MainForm'
-  ClientHeight = 455
-  ClientWidth = 647
+  ClientHeight = 779
+  ClientWidth = 1024
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,17 +15,17 @@ object MainForm: TMainForm
   object dxLayoutControl1: TdxLayoutControl
     Left = 0
     Top = 0
-    Width = 647
-    Height = 455
+    Width = 1024
+    Height = 779
     Align = alClient
     TabOrder = 0
     AutoSize = True
-    ExplicitWidth = 614
-    ExplicitHeight = 409
+    ExplicitWidth = 1014
+    ExplicitHeight = 747
     object btnDesign: TcxButton
-      Left = 8
-      Top = 8
-      Width = 124
+      Left = 12
+      Top = 12
+      Width = 196
       Height = 25
       Caption = 'Design Dashboard'
       SpeedButtonOptions.CanBeFocused = False
@@ -33,14 +33,14 @@ object MainForm: TMainForm
       OnClick = btnDesignClick
     end
     object dxDashboardControl1: TdxDashboardControl
-      Left = 8
-      Top = 38
-      Width = 631
-      Height = 409
+      Left = 12
+      Top = 46
+      Width = 1000
+      Height = 721
       DashboardName = 'Dashboard'
       Layout.Strings = (
         '<?xml version="1.0" encoding="utf-8"?>'
-        '<Dashboard>'
+        '<Dashboard RequestParameters="false">'
         '  <Title Text="Dashboard" />'
         '  <DataSources>'
         
@@ -49,22 +49,27 @@ object MainForm: TMainForm
         
           '      <Connection Name="NWindConnectionString" FromAppConfig="tr' +
           'ue" />'
-        '      <Query Type="CustomSqlQuery" Name="CustomSqlQuery">'
+        '      <Query Type="SelectQuery" Name="Invoices">'
         
-          '        <Parameter Name="CountryParameter" Type="DevExpress.Data' +
-          'Access.Expression">(System.String)(?CountryDashboardParameter)</' +
-          'Parameter>'
-        '        <Sql>select * from [Invoices] '
-        'where ([Invoices].[Country] = @CountryParameter)</Sql>'
+          '        <Parameter Name="CountryFilter" Type="DevExpress.DataAcc' +
+          'ess.Expression">(System.String)(?CountryDashboardParameter )</Pa' +
+          'rameter>'
+        '        <Tables>'
+        '          <Table Name="Invoices" />'
+        '        </Tables>'
+        '        <Columns>'
+        '          <AllColumns Table="Invoices" />'
+        '        </Columns>'
+        '        <Filter>[Invoices.Country] = ?CountryFilter</Filter>'
         '      </Query>'
         '      <ConnectionOptions CloseConnection="true" />'
         '      <CalculatedFields>'
         
-          '        <CalculatedField Name="Date" Expression="[OrderDate] " D' +
-          'ataType="DateTime" DataMember="CustomSqlQuery" />'
+          '        <CalculatedField Name="Price" Expression="ToDouble( [Ext' +
+          'endedPrice] ) " DataType="Auto" DataMember="Invoices" />'
         
-          '        <CalculatedField Name="Price" Expression="[ExtendedPrice' +
-          ']" DataType="Double" DataMember="CustomSqlQuery" />'
+          '        <CalculatedField Name="Calculated Field 1" Expression="T' +
+          'oDouble( [Invoices.ExtendedPrice] ) " DataType="Auto" />'
         '      </CalculatedFields>'
         '    </SqlDataSource>'
         '  </DataSources>'
@@ -76,12 +81,12 @@ object MainForm: TMainForm
         '  <Items>'
         
           '    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" Sh' +
-          'owCaption="false" DataSource="sqlDataSource1" DataMember="Custom' +
-          'SqlQuery">'
+          'owCaption="false" DataSource="sqlDataSource1" DataMember="Invoic' +
+          'es">'
         '      <DataItems>'
         
-          '        <Dimension DataMember="Date" DateTimeGroupInterval="Mont' +
-          'hYear" DefaultId="DataItem1" />'
+          '        <Dimension DataMember="OrderDate" DateTimeGroupInterval=' +
+          '"MonthYear" DefaultId="DataItem1" />'
         '        <Measure DataMember="Price" DefaultId="DataItem0">'
         '          <NumericFormat FormatType="Currency" />'
         '        </Measure>'
@@ -102,8 +107,8 @@ object MainForm: TMainForm
         '    </Chart>'
         
           '    <Card ComponentName="cardDashboardItem1" Name="Card 1" ShowC' +
-          'aption="false" DataSource="sqlDataSource1" DataMember="CustomSql' +
-          'Query">'
+          'aption="false" DataSource="sqlDataSource1" DataMember="Invoices"' +
+          '>'
         '      <DataItems>'
         
           '        <Measure DataMember="ExtendedPrice" DefaultId="DataItem0' +
@@ -143,8 +148,8 @@ object MainForm: TMainForm
         '    </Card>'
         
           '    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" ShowC' +
-          'aption="false" DataSource="sqlDataSource1" DataMember="CustomSql' +
-          'Query">'
+          'aption="false" DataSource="sqlDataSource1" DataMember="Invoices"' +
+          '>'
         '      <DataItems>'
         '        <Dimension DataMember="Address" DefaultId="DataItem0" />'
         '        <Dimension DataMember="City" DefaultId="DataItem1" />'
@@ -200,21 +205,21 @@ object MainForm: TMainForm
         '{"Parameters":{"CountryDashboardParameter":"France"}}')
       TabOrder = 3
       DesignSize = (
-        631
-        409)
+        1000
+        721)
     end
     object btnView: TcxButton
-      Left = 137
-      Top = 8
-      Width = 124
+      Left = 215
+      Top = 12
+      Width = 196
       Height = 25
       Caption = 'View Dashboard'
       TabOrder = 1
       OnClick = btnViewClick
     end
     object cbCountries: TcxLookupComboBox
-      Left = 346
-      Top = 8
+      Left = 500
+      Top = 12
       Properties.KeyFieldNames = 'Country'
       Properties.ListColumns = <
         item
@@ -225,7 +230,7 @@ object MainForm: TMainForm
       Style.HotTrack = False
       Style.TransparentBorder = False
       TabOrder = 2
-      Width = 293
+      Width = 512
     end
     object dxLayoutControl1Group_Root: TdxLayoutGroup
       AlignHorz = ahClient
@@ -279,7 +284,7 @@ object MainForm: TMainForm
       AlignHorz = ahClient
       CaptionOptions.Text = 'Select Country'
       Control = cbCountries
-      ControlOptions.OriginalHeight = 23
+      ControlOptions.OriginalHeight = 27
       ControlOptions.OriginalWidth = 145
       ControlOptions.ShowBorder = False
       Index = 2
@@ -295,10 +300,11 @@ object MainForm: TMainForm
   object dsNWind: TDataSource
     DataSet = FDNWind
     Left = 208
-    Top = 413
+    Top = 480
   end
   object dxSkinController1: TdxSkinController
-    SkinName = 'WXICompact'
+    NativeStyle = False
+    SkinName = 'WXI'
     Left = 96
     Top = 408
   end
@@ -307,13 +313,13 @@ object MainForm: TMainForm
       'Database=..\..\..\nwind.db'
       'DriverID=SQLite')
     Left = 152
-    Top = 413
+    Top = 480
   end
   object FDNWind: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT DISTINCT [Country] FROM [Customers] ORDER BY [Country];')
     Left = 96
-    Top = 413
+    Top = 480
   end
 end
