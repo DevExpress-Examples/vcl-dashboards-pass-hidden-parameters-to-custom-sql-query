@@ -1,7 +1,7 @@
 object MainForm: TMainForm
   Left = 0
   Top = 0
-  Caption = 'MainForm'
+  Caption = 'DevExpress Dashboards Example'
   ClientHeight = 779
   ClientWidth = 1024
   Color = clBtnFace
@@ -227,6 +227,7 @@ object MainForm: TMainForm
         end>
       Properties.ListSource = dsNWind
       Properties.OnEditValueChanged = cbCountriesPropertiesEditValueChanged
+      EditValue = 'France'
       Style.HotTrack = False
       Style.TransparentBorder = False
       TabOrder = 2
@@ -235,6 +236,7 @@ object MainForm: TMainForm
     object dxLayoutControl1Group_Root: TdxLayoutGroup
       AlignHorz = ahClient
       AlignVert = avClient
+      CaptionOptions.Text = 'DevExpress Dashboards Example'
       Hidden = True
       ItemIndex = 1
       ShowBorder = False
