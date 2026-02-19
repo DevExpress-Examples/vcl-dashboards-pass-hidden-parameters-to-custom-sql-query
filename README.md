@@ -11,15 +11,13 @@ This example demonstrates a dashboard that displays sales data for a selected co
 
 ## Prerequisites
 
-* Microsoft Windows 10 or newer
-* Embarcadero RAD Studio IDE 12.3 (Athens) or newer (Community Edition is not supported)
-* DevExpress VCL Components v25.2.3 or newer
+See: [DevExpress Dashboards Prerequisites](https://docs.devexpress.com/VCL/405773/ExpressCrossPlatformLibrary/vcl-backend/reports-dashboards-app-deployment#vcl-reportsdashboards-prerequisites)
 
 ## Implementation Details
 
 ### Create a Dashboard Parameter
 
-Open the DevExpress [Dashboard Designer](https://docs.devexpress.com/Dashboard/116518/basic-concepts-and-terminology/dashboard-designer#web-dashboard---designer-mode) (select the **Designer...** item from the [TdxDashboardControl](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxDashboardControl) component's context menu at design time or call the [ShowDesigner](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.ShowDesigner) method in code).
+Open the DevExpress [Dashboard Designer](https://docs.devexpress.com/Dashboard/116518/basic-concepts-and-terminology/dashboard-designer#web-dashboard---designer-mode) (select the **Designer…** item from the [TdxDashboardControl](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxDashboardControl) component's context menu at design time or call the [ShowDesigner](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.ShowDesigner) method in code).
 
 ![DevExpress VCL Dashboards - Open the Designer Dialog](/Images/vcl-dashboard-open-designer.png)
 
@@ -31,7 +29,7 @@ Open the [dashboard menu](https://docs.devexpress.com/Dashboard/117444) and clic
 
 1. Select **Data Sources** in the dashboard menu.
 2. Click **Add** within the **DATA SOURCES** pane to display the **Add Data Source** dialog.
-3. Click **Create data source...** to run the [Dashboard Data Source Wizard](https://docs.devexpress.com/Dashboard/117680/web-dashboard/ui-elements-and-customization/dialogs-and-wizards/dashboard-data-source-wizard).
+3. Click **Create data source…** to run the [Dashboard Data Source Wizard](https://docs.devexpress.com/Dashboard/117680/web-dashboard/ui-elements-and-customization/dialogs-and-wizards/dashboard-data-source-wizard).
 4. Create a new query as follows:
 
 ![DevExpress VCL Dashboards - Use the Query Builder Dialog](/Images/vcl-dashboard-query-builder-steps.gif)
@@ -64,8 +62,10 @@ end;
 
 ## Documentation
 
+* [Introduction to DevExpress VCL Dashboards](https://docs.devexpress.com/VCL/405642/ExpressDashboards/vcl-dashboards)
 * [Use Query Parameters](https://docs.devexpress.com/Dashboard/117192/web-dashboard/create-dashboards-on-the-web/providing-data/working-with-sql-data-sources/use-query-parameters)
 * [Dashboard Parameters](https://docs.devexpress.com/Dashboard/117062/web-dashboard/create-dashboards-on-the-web/data-analysis/dashboard-parameters)
+* [DevExpress VCL Dashboards Prerequisites](https://docs.devexpress.com/VCL/405773/ExpressCrossPlatformLibrary/vcl-backend/reports-dashboards-app-deployment#vcl-reportsdashboards-prerequisites)
 * [TdxCustomDashboardControl.Parameters](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.Parameters)
 * [TdxCustomDashboardControl.LoadParametersFromDashboard](https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.LoadParametersFromDashboard)
 
