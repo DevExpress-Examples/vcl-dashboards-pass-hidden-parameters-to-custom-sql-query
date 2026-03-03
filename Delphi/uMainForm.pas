@@ -78,7 +78,6 @@ end;
 procedure TMainForm.cbCountriesPropertiesEditValueChanged(Sender: TObject);
 begin
   dxDashboardControl1.Parameters['CountryDashboardParameter'].Value := cbCountries.EditValue;
-  dxDashboardControl1.ApplyParametersToState;
 end;
 
 end.
