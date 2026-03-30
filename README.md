@@ -24,11 +24,17 @@ The scenario demonstrated in this project relies on a configured dashboard layou
 
 Follow these steps to add a hidden parameter to a dashboard and use the parameter in a SQL query:
 
-1. [Create a Dashboard Parameter](#step-1-create-a-dashboard-parameter)
-2. [Create a SQL Query](#step-2-create-a-query)
-3. [Bind a Query Parameter to a Dashboard Parameter](#step-3-bind-a-query-parameter-to-a-dashboard-parameter)
-4. [Load Parameters From Layout](#step-4-load-parameters-from-layout)
-5. [Assign Parameter Values](#step-5-assign-parameter-values)
+- [DevExpress Dashboards for Delphi/C++Builder — Pass a Hidden Dashboard Parameter to a SQL Query](#devexpress-dashboards-for-delphicbuilder--pass-a-hidden-dashboard-parameter-to-a-sql-query)
+  - [Prerequisites](#prerequisites)
+  - [Implementation Details](#implementation-details)
+    - [Step 1: Create a Dashboard Parameter](#step-1-create-a-dashboard-parameter)
+    - [Step 2: Create a Query](#step-2-create-a-query)
+    - [Step 3: Bind a Query Parameter to a Dashboard Parameter](#step-3-bind-a-query-parameter-to-a-dashboard-parameter)
+      - [Step 4: Assign Parameter Values](#step-4-assign-parameter-values)
+        - [Delphi](#delphi)
+        - [C++](#c)
+  - [Documentation](#documentation)
+  - [Does This Example Address Your Development Requirements/Objectives?](#does-this-example-address-your-development-requirementsobjectives)
 
 ### Step 1: Create a Dashboard Parameter
 
@@ -66,35 +72,7 @@ This sample project creates a hidden parameter named `CountryDashboardParameter`
 
     > ![DevExpress VCL Dashboards — Use the Filter Builder Dialog](/Images/vcl-dashboard-filter-editor.gif)
 
-### Step 4: Load Parameters From Layout
-
-The [Parameters] collection is initially empty.
-You need to populate the collection at design- or runtime on demand.
-
-#### Populate Parameters at Runtime
-
-To populate the collection with parameters from a dashboard layout definition,
-call the [Parameters.LoadFromLayout] procedure at runtime.
-
-<!-- start-code-block -->
-##### Delphi
-```delphi
-dxDashboardControl1.Parameters.LoadFromLayout;
-```
-
-##### C++
-```c
-dxDashboardControl1->Parameters->LoadFromLayout();
-```
-<!-- end-code-block -->
-
-#### Populate Parameters at Design Time
-
-Select **Load Parameters from Dashboard** from the [TdxDashboardControl] context menu at design time:
-
-> ![DevExpress VCL Dashboards — Load Dashboard Parameters at Design Time](/Images/vcl-dashboard-load-parameters.png)
-
-#### Step 5: Assign Parameter Values
+#### Step 4: Assign Parameter Values
 
 To modify parameters in a dashboard, assign values to individual [Parameters] collection members as follows:
 
@@ -128,7 +106,6 @@ void __fastcall TMainForm::cbCountriesPropertiesEditValueChanged(TObject *Sender
 -   API reference:
     -   [TdxDashboardControl]
     -   [TdxCustomDashboardControl.Parameters][Parameters]
-    -   [TdxCustomDashboardControl.Parameters.LoadFromLayout][Parameters.LoadFromLayout]
     -   [TdxCustomDashboardControl.ShowDesigner][ShowDesigner]
 
 [designer]: https://docs.devexpress.com/Dashboard/116518/basic-concepts-and-terminology/dashboard-designer#web-dashboard---designer-mode
@@ -139,7 +116,6 @@ void __fastcall TMainForm::cbCountriesPropertiesEditValueChanged(TObject *Sender
 
 [TdxDashboardControl]: https://docs.devexpress.com/VCL/dxDashboard.Control.TdxDashboardControl
 [Parameters]: https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.Parameters
-[Parameters.LoadFromLayout]: https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.Parameters.LoadFromLayout
 
 [ShowDesigner]: https://docs.devexpress.com/VCL/dxDashboard.Control.TdxCustomDashboardControl.ShowDesigner
 
