@@ -5,7 +5,7 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# DevExpress Dashboards for Delphi/C++Builder — Pass a Hidden Dashboard Parameter to a SQL Query
+# DevExpress Dashboards for Delphi/C++Builder — Pass a Hidden Dashboard Parameter to a SQL Query<!-- omit from toc -->
 
 This example demonstrates a dashboard that displays sales data for a selected country.
 The selected country is passed to the underlying SQL query as a hidden [dashboard parameter][dashboard-parameters].
@@ -24,17 +24,15 @@ The scenario demonstrated in this project relies on a configured dashboard layou
 
 Follow these steps to add a hidden parameter to a dashboard and use the parameter in a SQL query:
 
-- [DevExpress Dashboards for Delphi/C++Builder — Pass a Hidden Dashboard Parameter to a SQL Query](#devexpress-dashboards-for-delphicbuilder--pass-a-hidden-dashboard-parameter-to-a-sql-query)
-  - [Prerequisites](#prerequisites)
-  - [Implementation Details](#implementation-details)
-    - [Step 1: Create a Dashboard Parameter](#step-1-create-a-dashboard-parameter)
-    - [Step 2: Create a Query](#step-2-create-a-query)
-    - [Step 3: Bind a Query Parameter to a Dashboard Parameter](#step-3-bind-a-query-parameter-to-a-dashboard-parameter)
-      - [Step 4: Assign Parameter Values](#step-4-assign-parameter-values)
-        - [Delphi](#delphi)
-        - [C++](#c)
-  - [Documentation](#documentation)
-  - [Does This Example Address Your Development Requirements/Objectives?](#does-this-example-address-your-development-requirementsobjectives)
+- [Prerequisites](#prerequisites)
+- [Implementation Details](#implementation-details)
+  - [Step 1: Create a Dashboard Parameter](#step-1-create-a-dashboard-parameter)
+  - [Step 2: Create a Query](#step-2-create-a-query)
+  - [Step 3: Bind a Query Parameter to a Dashboard Parameter](#step-3-bind-a-query-parameter-to-a-dashboard-parameter)
+  - [Step 4: Assign Parameter Values](#step-4-assign-parameter-values)
+    - [Delphi](#delphi)
+    - [C++](#c)
+- [Documentation](#documentation)
 
 ### Step 1: Create a Dashboard Parameter
 
@@ -72,12 +70,12 @@ This sample project creates a hidden parameter named `CountryDashboardParameter`
 
     > ![DevExpress VCL Dashboards — Use the Filter Builder Dialog](/Images/vcl-dashboard-filter-editor.gif)
 
-#### Step 4: Assign Parameter Values
+### Step 4: Assign Parameter Values
 
 To modify parameters in a dashboard, assign values to individual [Parameters] collection members as follows:
 
 <!-- start-code-block -->
-##### Delphi
+#### Delphi
 ```delphi
 procedure TMainForm.cbCountriesPropertiesEditValueChanged(Sender: TObject);
 begin
@@ -85,7 +83,7 @@ begin
 end;
 ```
 
-##### C++
+#### C++
 ```c
 void __fastcall TMainForm::cbCountriesPropertiesEditValueChanged(TObject *Sender)
 {
