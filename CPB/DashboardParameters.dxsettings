@@ -95,3 +95,8 @@
 		<dxSkinXmas2008Blue>false</dxSkinXmas2008Blue>
 	</Skins>
 </Appearance>
+<SplashForms>
+	<Version>1.0.0</Version>
+	<ShowSplashFormOnStartup>false</ShowSplashFormOnStartup>
+	<Data/>
+</SplashForms>
