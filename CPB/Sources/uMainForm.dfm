@@ -190,23 +190,8 @@ object MainForm: TMainForm
         '    </LayoutGroup>'
         '  </LayoutTree>'
         '</Dashboard>')
-      Parameters = <
-        item
-          Visible = False
-          Values = <
-            item
-              Value = 'France'
-            end>
-          ReceivedName = 'CountryDashboardParameter'
-          ReceivedDescription = ''
-          ReceivedDataType = rptString
-        end>
       State.Strings = (
         '{"Parameters":{"CountryDashboardParameter":"France"}}')
-      TabOrder = 3
-      DesignSize = (
-        1000
-        721)
     end
     object btnView: TcxButton
       Left = 215
@@ -296,7 +281,9 @@ object MainForm: TMainForm
     Left = 160
     Top = 408
     object NWindConnectionString: TdxBackendDatabaseSQLConnection
-      ConnectionString = 'XpoProvider=SQLite;Data Source=|DataDirectory|..\..\..\..\nwind.db; Mode=ReadOnly'
+      ConnectionString = 
+        'XpoProvider=SQLite;Data Source=|DataDirectory|..\..\..\..\..\nw' +
+        'ind.db; Mode=ReadOnly'
     end
   end
   object dsNWind: TDataSource
@@ -305,14 +292,13 @@ object MainForm: TMainForm
     Top = 480
   end
   object dxSkinController1: TdxSkinController
-    NativeStyle = False
     SkinName = 'WXI'
     Left = 96
     Top = 408
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=..\..\..\nwind.db'
+      'Database=..\..\..\..\..\nwind.db'
       'DriverID=SQLite')
     Left = 152
     Top = 480
