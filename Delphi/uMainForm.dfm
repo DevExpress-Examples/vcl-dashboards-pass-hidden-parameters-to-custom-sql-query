@@ -190,17 +190,6 @@ object MainForm: TMainForm
         '    </LayoutGroup>'
         '  </LayoutTree>'
         '</Dashboard>')
-      Parameters = <
-        item
-          Visible = False
-          Values = <
-            item
-              Value = 'France'
-            end>
-          ReceivedName = 'CountryDashboardParameter'
-          ReceivedDescription = ''
-          ReceivedDataType = rptString
-        end>
       State.Strings = (
         '{"Parameters":{"CountryDashboardParameter":"France"}}')
       TabOrder = 3
@@ -296,7 +285,9 @@ object MainForm: TMainForm
     Left = 160
     Top = 408
     object NWindConnectionString: TdxBackendDatabaseSQLConnection
-      ConnectionString = 'XpoProvider=SQLite;Data Source=|DataDirectory|..\..\..\nwind.db'
+      ConnectionString = 
+        'XpoProvider=SQLite;Data Source=|DataDirectory|..\..\..\nwind.db;' +
+        ' Mode=ReadOnly'
     end
   end
   object dsNWind: TDataSource
